@@ -9,7 +9,7 @@ public class Library {
 
     private List<Book> books;
 
-    //todo: dobra praktyka - uniemożliwienie zmian listy
+    //dobra praktyka - uniemożliwienie zmian listy
     // Collections.unmodifableList
     public List<Book> getBooks() {
         return Collections.unmodifiableList(books);

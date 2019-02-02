@@ -24,7 +24,6 @@ public final class BookBuilder {
     }
 
     public Book build(){
-    //todo: dokończyć metodę
         Book book = new Book();
         Author author = new Author();
         author.setFirstName(authorFirstName);
