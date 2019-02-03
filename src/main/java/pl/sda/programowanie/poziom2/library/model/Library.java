@@ -1,27 +1,30 @@
 package pl.sda.programowanie.poziom2.library.model;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class Library {
+//przerabiamy klasę na typ generyczny poprzez dodanie < >
+// poprzez dodanie <T> utworzona biblioteka bedzie przechowywala obiekty tylko danego typu T - PaperBook lub AudioBook
+public class Library<T extends Book> {
 
-    private List<Book> books;
+    private List<T> books;
 
     //dobra praktyka - uniemożliwienie zmian listy
     // Collections.unmodifableList
-    public List<Book> getBooks() {
+    public List<T> getBooks() {
         return Collections.unmodifiableList(books);
     }
 
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(List<T> books) {
         this.books = new LinkedList<>(books);
     }
 
 
-    public void addBook(Book book){
+    public void addBook(T book){
         if (books == null){
             books = new LinkedList<>();
         }
