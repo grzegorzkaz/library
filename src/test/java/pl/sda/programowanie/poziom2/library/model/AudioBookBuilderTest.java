@@ -13,6 +13,7 @@ public class AudioBookBuilderTest {
         String authorLastName = "Sienkiewicz";
         String title = "W pustyni i w puszczy";
         Format format = Format.MP3;
+        int duration = 1000;
 
         //when
         AudioBook book = new AudioBookBuilder()
@@ -20,6 +21,7 @@ public class AudioBookBuilderTest {
                 .setAuthorLastName(authorLastName)
                 .setTitle(title)
                 .setFormat(format)
+                .duration(duration)
                 .build();
 
         //then
@@ -29,6 +31,7 @@ public class AudioBookBuilderTest {
         assertEquals(authorLastName, book.getAuthor().getLastName());
         assertEquals(title, book.getTitle());
         assertEquals(format, book.getFormat());
+        assertEquals(duration, book.getDuration());
 
     }
 }

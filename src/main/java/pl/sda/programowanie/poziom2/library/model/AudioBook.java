@@ -2,13 +2,14 @@ package pl.sda.programowanie.poziom2.library.model;
 
 import java.util.Objects;
 
-public class AudioBook extends Book {
+public class AudioBook extends Book implements DigitalMedia {
 
     //poprzez stworzenie konstryktora zmieniamy domyslny modyfikator dostepu aby tylko klasy z pakietu mialy dostep do niego
     AudioBook(){
     }
 
     private Format format;
+    private int duration;
 
     public Format getFormat() {
         return format;
@@ -19,28 +20,37 @@ public class AudioBook extends Book {
     }
 
     @Override
+    public int getDuration() {
+        return duration;
+    }
+
+    @Override
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        if (!super.equals(o))
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         AudioBook audioBook = (AudioBook) o;
-        return format == audioBook.format;
+        return duration == audioBook.duration &&
+                format == audioBook.format;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), format);
+        return Objects.hash(super.hashCode(), format, duration);
     }
 
     @Override
     public String toString() {
         return "AudioBook{" +
-                "author=" + author +
-                ", title='" + title +
-                ", format=" + format.getLowercaseLetters() +'\'' +
+                "format=" + format +
+                ", duration=" + duration +
+                ", author=" + author +
+                ", title='" + title + '\'' +
                 '}';
     }
 }

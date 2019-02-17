@@ -8,7 +8,7 @@ import java.util.Objects;
 
 //przerabiamy klasę na typ generyczny poprzez dodanie < >
 // poprzez dodanie <T> utworzona biblioteka bedzie przechowywala obiekty tylko danego typu T - PaperBook lub AudioBook
-public class Library<T extends Book> {
+public class Library<T extends Multimedia> {
 
     private List<T> books;
 

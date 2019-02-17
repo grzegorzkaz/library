@@ -2,12 +2,12 @@ package pl.sda.programowanie.poziom2.library.model;
 
 import java.util.Objects;
 
- public class Author {
+ public class Creator {
 
     private String firstName;
     private String lastName;
 
-    Author(){
+    Creator(){
     }
 
     public String getFirstName() {
@@ -34,7 +34,7 @@ import java.util.Objects;
         if (o == null || getClass() != o.getClass())
             return false;
 
-        Author author = (Author) o;
+        Creator author = (Creator) o;
         return Objects.equals(firstName, author.firstName) &&
                 Objects.equals(lastName, author.lastName);
     }
@@ -47,7 +47,7 @@ import java.util.Objects;
 
     @Override
     public String toString() {
-        return "Author{" +
+        return "Creator{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
