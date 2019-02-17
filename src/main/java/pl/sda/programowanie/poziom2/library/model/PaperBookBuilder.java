@@ -1,22 +1,22 @@
 package pl.sda.programowanie.poziom2.library.model;
 
-import java.util.Optional;
-
 public class PaperBookBuilder {
 
     private String authorFirstName;
     private String authorLastName;
     private String title;
     private Cover cover;
+    private int pageCount;
 
 
     public PaperBook build() {
         PaperBook book = new PaperBook();
-        Author author = new Author();
+        Creator author = new Creator();
         author.setFirstName(authorFirstName);
         author.setLastName(authorLastName);
         book.setAuthor(author);
         book.setTitle(title);
+        book.setPageCount(pageCount);
         if (cover != null){
             book.setCover(cover);
         } else {
@@ -49,6 +49,11 @@ public class PaperBookBuilder {
 
     public PaperBookBuilder setCover(Cover cover) {
         this.cover = cover;
+        return this;
+    }
+
+    public PaperBookBuilder pageCount(int pageCount){
+        this.pageCount = pageCount;
         return this;
     }
 

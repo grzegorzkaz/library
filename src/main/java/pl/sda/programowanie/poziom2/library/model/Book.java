@@ -2,29 +2,20 @@ package pl.sda.programowanie.poziom2.library.model;
 
 import java.util.Objects;
 
- public abstract class Book {
+public abstract class Book extends Multimedia {
 
-    protected Author author;
-    protected String title;
 
-    Book(){
-    }
+    protected Creator author;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    Book() {
     }
 
 
-
-    public Author getAuthor() {
+    public Creator getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(Creator author) {
         this.author = author;
     }
 

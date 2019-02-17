@@ -1,12 +1,11 @@
 package pl.sda.programowanie.poziom2.library;
 
-
 import pl.sda.programowanie.poziom2.library.model.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        Library<Book> library = new Library<>();
+        Library<Multimedia> library = new Library<>();
         //dodawanie 5 ksiązek do biblioteki - zamiast sposobu poniżej skorzystamy z buildera - patrz klasa BookBuilder
 //        Book ksiazka = new Book();
 //        library.addBook(ksiazka);
@@ -56,10 +55,59 @@ public class Main {
                 .setTitle("Zbrodnia i Kara")
                 .build());
 
+        library.addBook(new MagazinesBuilder()
+                .setTitle("Programista")
+                .setPageCount(100)
+                .setNumber(100)
+                .build());
 
-        for (Book book : library.getBooks()) {
-            System.out.println(book);
+        library.addBook(new MagazinesBuilder()
+                .setTitle("CD Action")
+                .setPageCount(200)
+                .setNumber(10)
+                .build());
+
+        library.addBook(new MagazinesBuilder()
+                .setTitle("Newsweek")
+                .setNumber(12)
+                .setPageCount(56)
+                .build());
+
+        library.addBook(new MoviesBuilder()
+                .title("Zielona Mila")
+                .directorFirstName("Frank")
+                .directorLastName("Darabont")
+                .duration(180)
+                .build());
+
+        library.addBook(new MoviesBuilder()
+                .title("Shawshand redemption")
+                .directorLastName("Darabont")
+                .directorFirstName("Frank")
+                .duration(200)
+                .build());
+
+        library.addBook(new MoviesBuilder()
+                .title("Nietyklani")
+                .directorFirstName("Olivier")
+                .directorLastName("Nakache")
+                .duration(120)
+                .build());
+
+        //wypisywanie
+        System.out.println("Pierwszy sposób wypisania: ");
+        for (Multimedia multimedia : library.getBooks()) {
+            System.out.println(multimedia);
         }
+
+        //zamiast pętli for each możemy zastosować wyrażenie lambda
+        System.out.println("\n" + "Drugi sposób wypisania: ");
+        library.getBooks().forEach(multimedia -> System.out.println(multimedia));
+
+        //lub referencje do metody
+        System.out.println("\n" + "Trzeci sposób wypisania: ");
+        library.getBooks().forEach(System.out::println);
+
     }
 }
 
