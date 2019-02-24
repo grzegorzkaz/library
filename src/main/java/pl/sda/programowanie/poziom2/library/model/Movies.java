@@ -50,6 +50,8 @@ public class Movies extends Multimedia implements DigitalMedia {
         return "Movies{" +
                 "director=" + director +
                 ", duration=" + duration +
+                ", title='" + title + '\'' +
+                ", state=" + state +
                 '}';
     }
 }

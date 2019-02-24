@@ -53,6 +53,7 @@ public class PaperBook extends Book implements PaperMedia {
                 ", pageCount=" + pageCount +
                 ", author=" + author +
                 ", title='" + title + '\'' +
+                ", state=" + state +
                 '}';
     }
 }
