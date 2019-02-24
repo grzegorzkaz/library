@@ -10,7 +10,7 @@ import java.util.Objects;
 // poprzez dodanie <T> utworzona biblioteka bedzie przechowywala obiekty tylko danego typu T - PaperBook lub AudioBook
 public class Library<T extends Multimedia> {
 
-    private List<T> books;
+    private List<T> books = new LinkedList<>();
 
     //dobra praktyka - uniemożliwienie zmian listy
     // Collections.unmodifableList
@@ -20,14 +20,12 @@ public class Library<T extends Multimedia> {
 
 
     public void setBooks(List<T> books) {
+        assert books != null;
         this.books = new LinkedList<>(books);
     }
 
 
     public void addBook(T book){
-        if (books == null){
-            books = new LinkedList<>();
-        }
         books.add(book);
     }
 
