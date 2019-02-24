@@ -20,7 +20,8 @@ public class Main {
         commands.put("filter", new FilterByTypeCommand(library, System.out));
         commands.put("create", new CreateMultimediaCommand(library, System.out));
         commands.put("borrow", new BorrowMultimediaCommand(library, System.out));
-//        commands.put("movie", new DisplayMultimediaCommand(Library<Movie, System.out));
+        commands.put("return", new ReturnMultimediaCommand(library, System.out));
+
         while (true) {
             System.out.println("Podaj komendę: ");
             String commandName = scanner.nextLine();
