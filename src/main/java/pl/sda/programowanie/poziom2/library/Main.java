@@ -27,6 +27,7 @@ public class Main {
             System.out.println("Podaj komendę: ");
             String commandName = scanner.nextLine();
             Command command = commands.get(commandName);
+
             Optional.ofNullable(command).ifPresent(Command::execute);
         }
     }
