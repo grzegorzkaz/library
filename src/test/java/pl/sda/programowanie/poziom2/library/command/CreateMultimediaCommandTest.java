@@ -6,8 +6,6 @@ import pl.sda.programowanie.poziom2.library.model.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 

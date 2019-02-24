@@ -28,6 +28,7 @@ public class MagazinesBuilder {
         magazine.setTitle(title);
         magazine.setNumer(number);
         magazine.setPageCount(pageCount);
+        magazine.setState(new MultimediaReturnedState());
         return magazine;
     }
 

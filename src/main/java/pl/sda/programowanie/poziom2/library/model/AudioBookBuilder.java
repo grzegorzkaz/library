@@ -22,6 +22,7 @@ public class AudioBookBuilder {
         .ofNullable(this.format)
         .orElse(Format.MP3));
         book.setDuration(duration);
+        book.setState(new MultimediaReturnedState());
 
         //Powyższy Optional zastępuje if'a pod spodem
 //        if (format != null){

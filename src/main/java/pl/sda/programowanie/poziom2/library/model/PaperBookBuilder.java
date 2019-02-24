@@ -22,6 +22,7 @@ public class PaperBookBuilder {
         } else {
             book.setCover(Cover.SOFT);
         }
+        book.setState(new MultimediaReturnedState());
         //zamiast if można zastosować Optionala poniżej
         //Optional może przechowywać obiekty różnych typów podobnie jak lista, ale w odróżnieniu od lity
         //nie może być nullem. Może jedynie przechowywać wartości które są nullami

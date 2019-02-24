@@ -1,9 +1,6 @@
 package pl.sda.programowanie.poziom2.library;
 
-import pl.sda.programowanie.poziom2.library.command.Command;
-import pl.sda.programowanie.poziom2.library.command.CreateMultimediaCommand;
-import pl.sda.programowanie.poziom2.library.command.DisplayMultimediaCommand;
-import pl.sda.programowanie.poziom2.library.command.FilterByTypeCommand;
+import pl.sda.programowanie.poziom2.library.command.*;
 import pl.sda.programowanie.poziom2.library.model.*;
 
 import java.util.HashMap;
@@ -14,14 +11,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-//        Library<Multimedia> library = createLibrary();
-        Library<Multimedia> library = new Library<>();
+        Library<Multimedia> library = createLibrary();
+//        Library<Multimedia> library = new Library<>();
         Scanner scanner = new Scanner(System.in);
         Map<String, Command> commands = new HashMap<>();
         commands.put("exit", () -> System.exit(0));
         commands.put("display", new DisplayMultimediaCommand(library, System.out));
         commands.put("filter", new FilterByTypeCommand(library, System.out));
         commands.put("create", new CreateMultimediaCommand(library, System.out));
+        commands.put("borrow", new BorrowMultimediaCommand(library, System.out));
 //        commands.put("movie", new DisplayMultimediaCommand(Library<Movie, System.out));
         while (true) {
             System.out.println("Podaj komendę: ");

@@ -26,10 +26,10 @@ public class CreateMoviesCommandStrategy implements CreateMultimediaStrategy {
         int duration = scanner.nextInt();
         scanner.nextLine();
         return new MoviesBuilder()
-                .title("Człowiek z żelaza")
-                .directorFirstName("Andrzej")
-                .directorLastName("Wajda")
-                .duration(120)
+                .title(title)
+                .directorFirstName(directorFirstName)
+                .directorLastName(directorLastName)
+                .duration(duration)
                 .build();
     }
 

@@ -34,7 +34,7 @@ public class Library<T extends Multimedia> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Library library = (Library) o;
+        Library<?> library = (Library<?>) o;
         return Objects.equals(books, library.books);
     }
 
